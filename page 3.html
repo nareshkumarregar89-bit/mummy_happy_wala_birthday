@@ -11,14 +11,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-     <style>
+    <style>
+        .button-container {
+            position: sticky;
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .page{
+            /* position: sti; */
+            /* bottom: 20px;  
+            top: 90vh;
+            margin: 10px;
+            right: 50%; */
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;}
         .page {
             background: linear-gradient(45deg, #ff69b4, #ff1493);
             color: white;
-            border: none;
+            border: solid rgb(155, 6, 110) 1px;
             padding: 15px 30px;
             font-size: 1.2em;
-            border-radius: 50px;
+            border-radius: 70px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -48,8 +66,10 @@
         </div>
         <div id="ground"></div>
     </div>
-    <a href="page_2.html"><button class="page" >Prev</button></a>
-    <a href="page_4.html"><button  class="page">Next</button></a>
+    <div class="button-container">
+        <a href="page_2.html"><button class="page" >Prev</button></a>
+        <a href="page_4.html"><button  class="page">Next</button></a>
+    </div>
 
     <div id="music-container"></div>
     
@@ -158,4 +178,3 @@
 </body>
 
 </html>
-
