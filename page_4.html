@@ -61,20 +61,21 @@
          button {
             background: linear-gradient(45deg, #ff69b4, #ff1493);
             color: white;
-            border: none;
+            border: solid rgb(155, 6, 110) 1px;
             padding: 15px 30px;
             font-size: 1.2em;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
-            flex-direction: row;
         }
         button:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .button-container {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -84,10 +85,14 @@
         <img class="3" src="images/IMG_1115.jpg" alt="Birthday">
         <img class="4" src="images/IMG_1115.jpg" alt="Birthday">
     </div>
-    <button onclick="moveSlide(-1)">❮ Prev</button>
-    <button onclick="moveSlide(1)">Next ❯</button>
+    <div class="button-container">
+        <button onclick="moveSlide(-1)">❮ Prev</button>
+        <button onclick="moveSlide(1)">Next ❯</button>
+    </div>
+        <div class="button-container">
     <a href="page 3.html"><button>Prev page</button></a>
     <a href="index.html"><button>Home Page</button></a>
+</div>
     <script>
         let currentIndex = 0;
         function moveSlide(step) {
