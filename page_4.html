@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photos of bithday someone</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #c30966, #c85b6b, #be63a8);
+            color: rgb(235, 207, 207);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction:  row;
+             overflow: hidden;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.1; transform: scale(0.4); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: photoFadeIn 2s ease-in-out;
+            margin: 15px;
+            display: flex;            
+            justify-content: center;
+            align-items: center;
+            scroll-behavior: smooth;
+            transition: trnasform 0.3s ease-in-out;
+        }
+        @keyframes photoFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }   
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+         button {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            flex-direction: row;
+        }
+        button:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="1" src="images/IMG_1115.jpg" alt="Birthday">
+        <img class="2" src="images/IMG_1115.jpg" alt="Birthday">
+        <img class="3" src="images/IMG_1115.jpg" alt="Birthday">
+        <img class="4" src="images/IMG_1115.jpg" alt="Birthday">
+    </div>
+    <button onclick="moveSlide(-1)">❮ Prev</button>
+    <button onclick="moveSlide(1)">Next ❯</button>
+    <a href="page 3.html"><button>Prev page</button></a>
+    <a href="index.html"><button>Home Page</button></a>
+    <script>
+        let currentIndex = 0;
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.container img');
+            const totalSlides = slides.length;
+            
+            // Update the index based on the button click
+            currentIndex += step;
+
+            // Loop back to the start if we go past the end
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            } 
+            // Loop to the end if we go backward from the start
+            else if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            }
+
+            // Scroll to the current image
+            slides[currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+        }
+    </script>
+</body>
+</html>
